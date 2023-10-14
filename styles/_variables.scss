@@ -1,10 +1,137 @@
-$bodyblue: #3A4663;
-$bodygray: #E6E6E6;
-$darkgray: #D2CDCD;
-$lightgray: #EEE;
-$darkpurple: #17062A;
-$neonpurple: #56077C;
-$darkorange: #C85402;
-$bluegreen: #378187;
-$yellow: #FFE53D;
-$turqouise: #00DED0;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Theme One */
+
+$T1Background: #3A4663;
+$TIDisplay: #181F33;
+$TICalculator: #242D44;
+$T1BlackText: #434A59;
+$T1Red: #D03F2F;
+$T1RedHover: #F96B5B;
+$T1BoxShadowGray: 0px -4px 0px 0px #414E73 inset;
+
+@mixin T1BackgroundColors {
+    background: $T1Background;
+    color: white;
+}
+
+@mixin T1ButtonColors {
+    background: #EAE3DC;
+    box-shadow: 0px -4px 0px 0px #B3A497 inset;
+    &:hover {
+        background: #FFFFFE;
+    }
+}
+
+@mixin T1EqualButtonColors {
+    color: black;
+    background: $T1Red;
+    box-shadow: 0px -4px 0px 0px #93261A inset;
+    &:hover {
+        background: $T1RedHover;
+    }
+}
+
+@mixin T1ResetAndDelButtonColors {
+    color: #FFF;
+    background: #647198;
+    box-shadow: $T1BoxShadowGray;
+    &:hover {
+        background: #A2B2E1;
+    }
+}
+
+
+/* Theme Two */
+
+$T2Background: #E6E6E6;
+$T2Orange: #D03F2F;
+$T2OrangeHover: #F96B5B;
+
+@mixin T2BackgroundColors {
+    background: $T2Background;
+    color: #36362C;
+}
+
+@mixin T2ButtonColors {
+    background: #E5E4E1;
+    box-shadow: 0px -4px 0px 0px #A79E91 inset;
+    &:hover {
+        background: #FFF;
+    }
+}
+
+@mixin T2EqualButtonColors {
+    color: white;
+    background: $T2Orange;
+    box-shadow: 0px -4px 0px 0px #873901 inset;
+    &:hover {
+        background: $T2OrangeHover;
+    }
+}
+
+@mixin T2ResetAndDelButtonColors {
+    color: white;
+    background: #378187;
+    box-shadow: 0px -4px 0px 0px #1B6066 inset;
+    &:hover {
+        background: #62B5BC;
+    }
+}
+
+
+/* Theme Three */
+
+$T3Background: #17062A;
+$T3Yellow: #FFE53D;
+$T3Turqouise: #00DED0;
+$T3BoxShadow: 0px -4px 0px 0px #BE15F4 inset;
+
+@mixin T2BackgroundColors {
+    background: $T3Background;
+    color: $T3Yellow;
+}
+
+@mixin T3ButtonColors {
+    background: #331C4D;
+    box-shadow: $T3BoxShadow;
+    &:hover {
+        background: #6C34AC;
+        box-shadow: 0px -4px 0px 0px #881C9E inset;
+    }
+}
+
+@mixin T3EqualButtonColors {
+    color: black;
+    background: $T3Turqouise;
+    box-shadow: 0px -4px 0px 0px #6CF9F1 inset;
+    &:hover {
+        background: #93FFF8;
+    }
+}
+
+@mixin T3ResetAndDelButtonColors {
+    background: #8631AF;
+    box-shadow: $T3BoxShadow;
+    &:hover {
+        background: #56077C;
+    }
+}
+
+

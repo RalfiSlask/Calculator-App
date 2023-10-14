@@ -52,6 +52,118 @@ table {
   border-spacing: 0;
 }
 
+/* Theme One */
+/* Theme Two */
+/* Theme Three */
 * {
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #3A4663;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+}
+
+.main_container {
+  padding: 30px 24px;
+  width: 100vw;
+  max-width: 540px;
+  max-height: 606px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+header {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .calc {
+  font-size: 2rem;
+  letter-spacing: -0.533px;
+}
+header .theme_container {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 26px;
+}
+header .theme_container .theme {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+header .theme_container .theme_panel {
+  width: 72px;
+}
+header .theme_container .theme_panel div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 1rem;
+}
+header .theme_container .theme_panel input {
+  width: 100%;
+}
+
+.display_container {
+  height: 88px;
+  width: 100%;
+  border-radius: 10px;
+  background: #181F33;
+}
+
+.calculator_container {
+  background: #242D44;
+  max-height: 480px;
+  border-radius: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  padding: 24px;
+}
+.calculator_container div {
+  border-radius: 5px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calculator_container .reset, .calculator_container .equal {
+  grid-row: 5;
+  grid-column: span 6;
+}
+.calculator_container .reset {
+  color: #FFF;
+  background: #647198;
+  box-shadow: 0px -4px 0px 0px #414E73 inset;
+}
+.calculator_container .reset:hover {
+  background: #A2B2E1;
+}
+
+@media screen and (min-width: 768px) {
+  .main_container {
+    margin-top: 98px;
+    max-height: 706px;
+  }
 }/*# sourceMappingURL=style.css.map */
