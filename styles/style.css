@@ -124,6 +124,11 @@ body .main_container main .display_container {
   height: 88px;
   width: 100%;
   border-radius: 10px;
+  font-size: 2.5rem;
+  letter-spacing: -0.667px;
+  padding: 29px 24px 22px 24px;
+  display: flex;
+  justify-content: flex-end;
   background: #181F33;
 }
 body .main_container .calculator_container {
@@ -252,6 +257,11 @@ body .main_container .calculator_container .equal:hover {
   .main_container {
     margin-top: 98px;
     max-height: 780px;
+  }
+  .display_container {
+    font-size: 3.5rem;
+    letter-spacing: -0.933px;
+    padding: 40px 32px 36px 32px;
   }
   .calculator_container {
     padding: 32px 30px;
