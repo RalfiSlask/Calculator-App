@@ -15,88 +15,162 @@ body {
     justify-content: center;
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-}
-
-.main_container {
-    padding: 30px 24px;
-    width: 100vw;
-    max-width: 540px;
-    max-height: 606px;
-    @include flex-column();
-    gap: 32px;
-}
-
-main {
-    @include flex-column();
-    gap: 24px;
-}
-
-header {
-    width: 100%;
-    height: 42px;
-    @include flex-between;
-    .calc {
-        font-size: 2rem;
-        letter-spacing: -0.533px;
-    }
-    .theme_container {
-        width: 150px;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        gap: 26px;
-        .theme {
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .theme_panel {
-            width: 72px;
-            div {
-                @include flex-between();
-                padding: 0 10px;
-                font-size: 1rem;
+    .main_container {
+        padding: 30px 24px;
+        width: 100vw;
+        max-width: 600px;
+        max-height: 606px;
+        @include flex-column();
+        gap: 32px;
+        header {
+            width: 100%;
+            height: 42px;
+            @include flex-between;
+            .calc {
+                font-size: 2rem;
+                letter-spacing: -0.533px;
             }
-            input {
+            .theme_container {
+                width: 150px;
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+                gap: 26px;
+                .theme {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                .theme_panel {
+                    width: 72px;
+                    div {
+                        @include flex-between();
+                        padding: 0 10px;
+                        font-size: 1rem;
+                    }
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        main {
+            @include flex-column();
+            gap: 24px;
+            .display_container {
+                height: 88px;
                 width: 100%;
+                border-radius: 10px;
+                background: $TIDisplay;
             }
         }
-    }
+        .calculator_container {
+            background: $TICalculator;
+            max-height: 480px;
+            border-radius: 10px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            padding: 24px; 
+            gap: 11px;
+            div {
+                border-radius: 5px;
+                height: 64px;
+                @include flex-center();
+                @include T1ButtonColors();
+                grid-area: span 2 / span 3;
+                cursor: pointer;
+                font-size: 2rem;
+                letter-spacing: -0.533px;
+            }
+            .reset, .equal {
+                grid-area: 9 / span 6;
+            }
+        
+            .reset, .equal, .delete {
+                font-size: 1.25rem;
+                text-transform: uppercase;
+                letter-spacing: -0.333px;
+            }
+            .reset, .delete {
+                @include T1ResetAndDelButtonColors();
+            }
+            .equal {
+                @include T1EqualButtonColors();
+            }
+        }
+        
+    }     
 }
 
-.display_container {
-    height: 88px;
-    width: 100%;
-    border-radius: 10px;
-    background: $TIDisplay;
+.T2 {
+    @include T2BackgroundColors();
+    .main_container {
+        main {
+            .display_container {
+                background: $T2Display;
+            }
+        }
+        .calculator_container {
+            background: $T2Calculator;
+            div {
+                @include T2ButtonColors();
+            }
+            .reset, .delete {
+                @include T2ResetAndDelButtonColors();
+            }
+            .equal {
+                @include T2EqualButtonColors();
+            }
+        }
+        
+    }   
+}
+
+.T3 {
+    @include T3BackgroundColors();
+    .main_container {
+        main {
+            .display_container {
+                background: $T3Display;
+            }
+        }
+        .calculator_container {
+            background: $T3Display;
+            div {
+                @include T3ButtonColors();
+            }
+            .reset, .delete {
+                @include T3ResetAndDelButtonColors();
+            }
+            .equal {
+                @include T3EqualButtonColors();
+            }
+        }
+        
+    }   
+}
+
+
+@media screen and (min-width: 768px) {
+    
+.main_container {
+    margin-top: 98px;
+    max-height: 780px;
 }
 
 .calculator_container {
-    background: $TICalculator;
-    max-height: 480px;
-    border-radius: 10px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    padding: 24px; 
+    padding: 32px 30px;
+    gap: 24px;
     div {
-        border-radius: 5px;
-        height: 64px;
-        @include flex-center();
+        border-radius: 10px;
+        font-size: 2.5rem;
+        letter-spacing: -0.667px;
     }
-    .reset, .equal {
-        grid-row: 5;
-        grid-column: span 6;
-    }
-    .reset {
-        @include T1ResetAndDelButtonColors();
+    .reset, .equal, .delete {
+        font-size: 1.75rem;
+        letter-spacing: -0.467px;
     }
 }
 
-@media screen and (min-width: 768px) {
-.main_container {
-    margin-top: 98px;
-    max-height: 706px;
-}
 }
 

@@ -33,6 +33,7 @@ $T1BoxShadowGray: 0px -4px 0px 0px #414E73 inset;
 
 @mixin T1ButtonColors {
     background: #EAE3DC;
+    color: #434A59;
     box-shadow: 0px -4px 0px 0px #B3A497 inset;
     &:hover {
         background: #FFFFFE;
@@ -40,7 +41,7 @@ $T1BoxShadowGray: 0px -4px 0px 0px #414E73 inset;
 }
 
 @mixin T1EqualButtonColors {
-    color: black;
+    color: white;
     background: $T1Red;
     box-shadow: 0px -4px 0px 0px #93261A inset;
     &:hover {
@@ -61,8 +62,10 @@ $T1BoxShadowGray: 0px -4px 0px 0px #414E73 inset;
 /* Theme Two */
 
 $T2Background: #E6E6E6;
-$T2Orange: #D03F2F;
-$T2OrangeHover: #F96B5B;
+$T2Display: #EEE;
+$T2Calculator: #D2CDCD;
+$T2Orange: #C85402;
+$T2OrangeHover: #FF8A38;
 
 @mixin T2BackgroundColors {
     background: $T2Background;
@@ -99,16 +102,18 @@ $T2OrangeHover: #F96B5B;
 /* Theme Three */
 
 $T3Background: #17062A;
+$T3Display: #1E0936;
 $T3Yellow: #FFE53D;
 $T3Turqouise: #00DED0;
 $T3BoxShadow: 0px -4px 0px 0px #BE15F4 inset;
 
-@mixin T2BackgroundColors {
+@mixin T3BackgroundColors {
     background: $T3Background;
     color: $T3Yellow;
 }
 
 @mixin T3ButtonColors {
+    color: $T3Yellow;
     background: #331C4D;
     box-shadow: $T3BoxShadow;
     &:hover {
@@ -127,6 +132,7 @@ $T3BoxShadow: 0px -4px 0px 0px #BE15F4 inset;
 }
 
 @mixin T3ResetAndDelButtonColors {
+    color: white;
     background: #8631AF;
     box-shadow: $T3BoxShadow;
     &:hover {
