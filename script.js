@@ -4,6 +4,11 @@ const operators = document.querySelectorAll(".operator");
 const numbers = document.querySelectorAll(".number");
 const display = document.querySelector(".display_container");
 const body = document.querySelector("body");
+const deleteButton = document.querySelector(".delete");
+const resetButton = document.querySelector(".reset");
+const equalButton = document.querySelector(".equal");
+let displayArray = ["0"];
+const operatorArray = ["+", "-", "x", "/"];
 slider === null || slider === void 0 ? void 0 : slider.addEventListener("change", () => {
     if (body) {
         body.className = "";
@@ -15,36 +20,56 @@ slider === null || slider === void 0 ? void 0 : slider.addEventListener("change"
         }
     }
 });
-let displayArray = ["0"];
-const lastIndex = displayArray.length;
-operators.forEach(operator => {
-    let isLastIndexAnOperator;
-    if (operator.textContent) {
-        isLastIndexAnOperator = displayArray[lastIndex - 1].includes(operator.textContent);
-        console.log(isLastIndexAnOperator);
+const displayContent = () => {
+    if (display) {
+        display.textContent = displayArray.join("");
     }
+};
+deleteButton === null || deleteButton === void 0 ? void 0 : deleteButton.addEventListener("click", () => {
+    displayArray.pop();
+    displayContent();
+});
+resetButton === null || resetButton === void 0 ? void 0 : resetButton.addEventListener("click", () => {
+    displayArray = ["0"];
+    displayContent();
+});
+equalButton === null || equalButton === void 0 ? void 0 : equalButton.addEventListener("click", () => {
+    // if the last element is an operator do nothing
+    if (getLastElementInArrayIsAnOperator(displayArray))
+        return;
+    const calc = 52 + 45;
+    console.log(calc);
+    const hej = displayArray.join("");
+});
+const getLastElementInArrayIsAnOperator = (array) => {
+    const lastIndex = array.length - 1;
+    return operatorArray.includes(array[lastIndex]);
+};
+operators.forEach(operator => {
     operator.addEventListener("click", () => {
-        if ((display === null || display === void 0 ? void 0 : display.textContent) && operator.textContent) {
+        const isLastIndexAnOperator = getLastElementInArrayIsAnOperator(displayArray);
+        if (operator.textContent) {
             if (isLastIndexAnOperator) {
-                displayArray[lastIndex - 1] = operator.textContent;
+                displayArray[displayArray.length - 1] = operator.textContent;
             }
             else {
-                displayArray.push(operator.textContent);
+                displayArray.push(`${operator.textContent}`);
             }
-            display.textContent = displayArray.join("");
+            displayContent();
         }
     });
 });
 numbers.forEach(number => {
     number.addEventListener("click", () => {
-        if ((display === null || display === void 0 ? void 0 : display.textContent) && number.textContent) {
-            if (displayArray[0] === "0") {
+        if (number.textContent) {
+            // if the starting number displayed is a zero, replace with number pressed
+            if (displayArray.length === 1 && displayArray[0] === "0") {
                 displayArray[0] = number.textContent;
             }
             else {
                 displayArray.push(number.textContent);
             }
-            display.textContent = displayArray.join("");
+            displayContent();
         }
     });
 });
